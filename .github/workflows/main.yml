@@ -26,10 +26,12 @@ jobs:
 
     - name: Run tests with coverage
       run: |
+        export PYTHONPATH=$(pwd)
         pytest --cov=app tests/
 
     - name: Generate coverage report
       run: |
+        export PYTHONPATH=$(pwd)
         pytest --cov=app --cov-report=xml
 
     - name: Upload coverage reports to Codecov
